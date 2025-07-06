@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Search, Smartphone, Laptop, Headphones } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -21,18 +22,18 @@ const Header = () => {
             <a href="#reviews" className="text-foreground hover:text-primary transition-colors">
               Latest Reviews
             </a>
-            <div className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors cursor-pointer">
+            <Link to="/phones" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
               <Smartphone className="w-4 h-4" />
               <span>Phones</span>
-            </div>
-            <div className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors cursor-pointer">
+            </Link>
+            <Link to="/laptops" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
               <Laptop className="w-4 h-4" />
               <span>Laptops</span>
-            </div>
-            <div className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors cursor-pointer">
+            </Link>
+            <Link to="/audio" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
               <Headphones className="w-4 h-4" />
               <span>Audio</span>
-            </div>
+            </Link>
           </nav>
 
           {/* Actions */}
