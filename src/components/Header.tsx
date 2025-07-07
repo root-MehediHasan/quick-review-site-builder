@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Search, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, BookOpen } from "lucide-react";
+import { Menu, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
@@ -55,9 +56,7 @@ const Header = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="icon">
-              <Search className="w-4 h-4" />
-            </Button>
+            <SearchBar />
             <Button variant="glow" className="hidden md:inline-flex">
               Subscribe
             </Button>
