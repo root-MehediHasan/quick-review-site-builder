@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Search, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart } from "lucide-react";
+import { Menu, Search, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-6">
             <Link to="/phones" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
               <Smartphone className="w-4 h-4" />
               <span>Phones</span>
@@ -43,6 +43,14 @@ const Header = () => {
               <ShoppingCart className="w-4 h-4" />
               <span>Guides</span>
             </Link>
+            <Link to="/tech-news" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
+              <Newspaper className="w-4 h-4" />
+              <span>News</span>
+            </Link>
+            <Link to="/video-reviews" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
+              <BookOpen className="w-4 h-4" />
+              <span>Videos</span>
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -53,7 +61,7 @@ const Header = () => {
             <Button variant="glow" className="hidden md:inline-flex">
               Subscribe
             </Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
+            <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="w-4 h-4" />
             </Button>
           </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Twitter, Youtube, Instagram, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,14 +9,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
+            <Link to="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center">
                 <span className="text-sm font-bold text-primary-foreground">TQ</span>
               </div>
               <h3 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
                 TechQuickReview
               </h3>
-            </div>
+            </Link>
             <p className="text-muted-foreground">
               Your trusted source for honest, in-depth tech reviews and buying guides.
             </p>
@@ -39,21 +40,21 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Reviews</h4>
             <div className="space-y-2">
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/phones" className="block text-muted-foreground hover:text-primary transition-colors">
                 Smartphones
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/laptops" className="block text-muted-foreground hover:text-primary transition-colors">
                 Laptops
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/audio" className="block text-muted-foreground hover:text-primary transition-colors">
                 Audio & Headphones
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/gaming" className="block text-muted-foreground hover:text-primary transition-colors">
                 Gaming Gear
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/cameras" className="block text-muted-foreground hover:text-primary transition-colors">
                 Cameras
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -61,21 +62,21 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Resources</h4>
             <div className="space-y-2">
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/buying-guides" className="block text-muted-foreground hover:text-primary transition-colors">
                 Buying Guides
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/comparison-tools" className="block text-muted-foreground hover:text-primary transition-colors">
                 Comparison Tools
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/tech-news" className="block text-muted-foreground hover:text-primary transition-colors">
                 Tech News
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/video-reviews" className="block text-muted-foreground hover:text-primary transition-colors">
                 Video Reviews
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/tech-tips" className="block text-muted-foreground hover:text-primary transition-colors">
                 Tech Tips
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -83,21 +84,21 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-bold text-foreground">Company</h4>
             <div className="space-y-2">
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              <Link to="/about-us" className="block text-muted-foreground hover:text-primary transition-colors">
                 About Us
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/editorial-team" className="block text-muted-foreground hover:text-primary transition-colors">
                 Editorial Team
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/contact" className="block text-muted-foreground hover:text-primary transition-colors">
                 Contact
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/privacy-policy" className="block text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-colors">
+              </Link>
+              <Link to="/terms-of-service" className="block text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
