@@ -48,10 +48,10 @@ const Header = () => {
               <Newspaper className="w-4 h-4" />
               <span>News</span>
             </Link>
-            <Link to="/video-reviews" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
+{/*             <Link to="/video-reviews" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
               <BookOpen className="w-4 h-4" />
               <span>Videos</span>
-            </Link>
+            </Link> */}
           </nav>
 
           {/* Actions */}
