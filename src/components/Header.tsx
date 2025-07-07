@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, BookOpen, ChevronDown } from "lucide-react";
+import { Menu, X, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, ChevronDown, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   DropdownMenu,
@@ -9,15 +10,34 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import SearchBar from "./SearchBar";
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isPhonesOpen, setIsPhonesOpen] = useState(false);
+  const [isLaptopsOpen, setIsLaptopsOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setIsPhonesOpen(false);
+    setIsLaptopsOpen(false);
+  };
+
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
             <div className="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center">
               <span className="text-sm font-bold text-primary-foreground">TQ</span>
             </div>
@@ -26,7 +46,7 @@ const Header = () => {
             </h1>
           </Link>
 
-          {/* Navigation */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {/* Phones Dropdown */}
             <DropdownMenu>
@@ -137,11 +157,180 @@ const Header = () => {
             <Button variant="glow" className="hidden md:inline-flex">
               Subscribe
             </Button>
-            <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu className="w-4 h-4" />
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="lg:hidden"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </Button>
           </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden mt-4 pb-4 border-t border-border">
+            <nav className="flex flex-col space-y-2 pt-4">
+              {/* Phones Section */}
+              <Collapsible open={isPhonesOpen} onOpenChange={setIsPhonesOpen}>
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-3 text-left text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors">
+                  <div className="flex items-center space-x-2">
+                    <Smartphone className="w-4 h-4" />
+                    <span>Phones</span>
+                  </div>
+                  <ChevronRight className={`w-4 h-4 transition-transform ${isPhonesOpen ? 'rotate-90' : ''}`} />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="ml-6 mt-2 space-y-1">
+                  <Link 
+                    to="/phones" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    All Phone Reviews
+                  </Link>
+                  <Link 
+                    to="/phones?category=flagship" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Flagship Phones
+                  </Link>
+                  <Link 
+                    to="/phones?category=budget" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Budget Phones
+                  </Link>
+                  <Link 
+                    to="/phones?category=gaming" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Gaming Phones
+                  </Link>
+                  <Link 
+                    to="/phones?category=camera" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Camera Phones
+                  </Link>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Laptops Section */}
+              <Collapsible open={isLaptopsOpen} onOpenChange={setIsLaptopsOpen}>
+                <CollapsibleTrigger className="flex items-center justify-between w-full p-3 text-left text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors">
+                  <div className="flex items-center space-x-2">
+                    <Laptop className="w-4 h-4" />
+                    <span>Laptops</span>
+                  </div>
+                  <ChevronRight className={`w-4 h-4 transition-transform ${isLaptopsOpen ? 'rotate-90' : ''}`} />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="ml-6 mt-2 space-y-1">
+                  <Link 
+                    to="/laptops" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    All Laptop Reviews
+                  </Link>
+                  <Link 
+                    to="/laptops?category=gaming" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Gaming Laptops
+                  </Link>
+                  <Link 
+                    to="/laptops?category=business" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Business Laptops
+                  </Link>
+                  <Link 
+                    to="/laptops?category=ultrabook" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Ultrabooks
+                  </Link>
+                  <Link 
+                    to="/laptops?category=2in1" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    2-in-1 Convertibles
+                  </Link>
+                  <Link 
+                    to="/laptops?category=workstation" 
+                    className="block p-2 text-sm text-muted-foreground hover:text-primary hover:bg-secondary/30 rounded-md transition-colors"
+                    onClick={closeMobileMenu}
+                  >
+                    Workstations
+                  </Link>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Other Navigation Items */}
+              <Link 
+                to="/audio" 
+                className="flex items-center space-x-2 p-3 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                <Headphones className="w-4 h-4" />
+                <span>Audio</span>
+              </Link>
+              
+              <Link 
+                to="/gaming" 
+                className="flex items-center space-x-2 p-3 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                <Gamepad2 className="w-4 h-4" />
+                <span>Gaming</span>
+              </Link>
+              
+              <Link 
+                to="/cameras" 
+                className="flex items-center space-x-2 p-3 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                <Camera className="w-4 h-4" />
+                <span>Cameras</span>
+              </Link>
+              
+              <Link 
+                to="/buying-guides" 
+                className="flex items-center space-x-2 p-3 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                <ShoppingCart className="w-4 h-4" />
+                <span>Buying Guides</span>
+              </Link>
+              
+              <Link 
+                to="/tech-news" 
+                className="flex items-center space-x-2 p-3 text-foreground hover:text-primary hover:bg-secondary/50 rounded-md transition-colors"
+                onClick={closeMobileMenu}
+              >
+                <Newspaper className="w-4 h-4" />
+                <span>Tech News</span>
+              </Link>
+
+              {/* Mobile Subscribe Button */}
+              <div className="pt-4 border-t border-border mt-4">
+                <Button variant="glow" className="w-full" onClick={closeMobileMenu}>
+                  Subscribe
+                </Button>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
