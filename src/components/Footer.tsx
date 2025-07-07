@@ -105,7 +105,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 TechQuickReview. All rights reserved. Made with ❤️ for tech enthusiasts.
+            © 2025 TechQuickReview. All rights reserved. Made with ❤️ for tech enthusiasts.
           </p>
         </div>
       </div>
