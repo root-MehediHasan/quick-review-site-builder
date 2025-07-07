@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, BookOpen } from "lucide-react";
+import { Menu, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, BookOpen, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import SearchBar from "./SearchBar";
 
 const Header = () => {
@@ -20,14 +28,87 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
-            <Link to="/phones" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
-              <Smartphone className="w-4 h-4" />
-              <span>Phones</span>
-            </Link>
-            <Link to="/laptops" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
-              <Laptop className="w-4 h-4" />
-              <span>Laptops</span>
-            </Link>
+            {/* Phones Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors outline-none">
+                <Smartphone className="w-4 h-4" />
+                <span>Phones</span>
+                <ChevronDown className="w-3 h-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuLabel>Phone Categories</DropdownMenuLabel>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones" className="w-full">All Phone Reviews</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/phones?category=flagship" className="w-full">Flagship Phones</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones?category=budget" className="w-full">Budget Phones</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones?category=gaming" className="w-full">Gaming Phones</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones?category=camera" className="w-full">Camera Phones</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Popular Reviews</DropdownMenuLabel>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones/iphone-15-pro-max" className="w-full">iPhone 15 Pro Max</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones/samsung-galaxy-s24-ultra" className="w-full">Galaxy S24 Ultra</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/phones/google-pixel-8-pro" className="w-full">Google Pixel 8 Pro</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Laptops Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors outline-none">
+                <Laptop className="w-4 h-4" />
+                <span>Laptops</span>
+                <ChevronDown className="w-3 h-3" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuLabel>Laptop Categories</DropdownMenuLabel>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops" className="w-full">All Laptop Reviews</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops?category=gaming" className="w-full">Gaming Laptops</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops?category=business" className="w-full">Business Laptops</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops?category=ultrabook" className="w-full">Ultrabooks</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops?category=2in1" className="w-full">2-in-1 Convertibles</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops?category=workstation" className="w-full">Workstations</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuLabel>Popular Reviews</DropdownMenuLabel>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops/macbook-pro-m3-max" className="w-full">MacBook Pro M3 Max</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops/dell-xps-15" className="w-full">Dell XPS 15</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/laptops/thinkpad-x1-carbon" className="w-full">ThinkPad X1 Carbon</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link to="/audio" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
               <Headphones className="w-4 h-4" />
               <span>Audio</span>
@@ -48,10 +129,6 @@ const Header = () => {
               <Newspaper className="w-4 h-4" />
               <span>News</span>
             </Link>
-{/*             <Link to="/video-reviews" className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors">
-              <BookOpen className="w-4 h-4" />
-              <span>Videos</span>
-            </Link> */}
           </nav>
 
           {/* Actions */}
