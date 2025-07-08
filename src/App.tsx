@@ -21,6 +21,13 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import Wearables from "./pages/Wearables";
+import Tablets from "./pages/Tablets";
+import Monitors from "./pages/Monitors";
+import Keyboards from "./pages/Keyboards";
+import Mice from "./pages/Mice";
+import Speakers from "./pages/Speakers";
+import SmartTVs from "./pages/SmartTVs";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +44,13 @@ const App = () => (
           <Route path="/audio" element={<Audio />} />
           <Route path="/gaming" element={<Gaming />} />
           <Route path="/cameras" element={<Cameras />} />
+          <Route path="/wearables" element={<Wearables />} />
+          <Route path="/tablets" element={<Tablets />} />
+          <Route path="/monitors" element={<Monitors />} />
+          <Route path="/keyboards" element={<Keyboards />} />
+          <Route path="/mice" element={<Mice />} />
+          <Route path="/speakers" element={<Speakers />} />
+          <Route path="/smart-tvs" element={<SmartTVs />} />
           <Route path="/categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />

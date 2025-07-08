@@ -31,7 +31,7 @@ const Categories = () => {
       count: "12+ Reviews",
       icon: Watch,
       gradient: "from-orange-500 to-red-600",
-      link: "/categories"
+      link: "/wearables"
     },
     {
       title: "Cameras",

@@ -154,9 +154,6 @@ const Header = () => {
           {/* Actions */}
           <div className="flex items-center space-x-4">
             <SearchBar />
-            <Button variant="glow" className="hidden md:inline-flex">
-              Subscribe
-            </Button>
             <Button 
               variant="ghost" 
               size="icon" 
@@ -321,13 +318,6 @@ const Header = () => {
                 <Newspaper className="w-4 h-4" />
                 <span>Tech News</span>
               </Link>
-
-              {/* Mobile Subscribe Button */}
-              <div className="pt-4 border-t border-border mt-4">
-                <Button variant="glow" className="w-full" onClick={closeMobileMenu}>
-                  Subscribe
-                </Button>
-              </div>
             </nav>
           </div>
         )}
