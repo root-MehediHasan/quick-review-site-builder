@@ -28,6 +28,8 @@ import Keyboards from "./pages/Keyboards";
 import Mice from "./pages/Mice";
 import Speakers from "./pages/Speakers";
 import SmartTVs from "./pages/SmartTVs";
+import RequestReview from "./pages/RequestReview";
+import FAQ from "./pages/FAQ";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +53,8 @@ const App = () => (
           <Route path="/mice" element={<Mice />} />
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/smart-tvs" element={<SmartTVs />} />
+          <Route path="/request-review" element={<RequestReview />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />

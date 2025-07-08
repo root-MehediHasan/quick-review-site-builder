@@ -10,42 +10,42 @@ const Categories = () => {
       count: "25+ Reviews",
       icon: Smartphone,
       gradient: "from-blue-500 to-purple-600",
-      link: "/phones"
+      link: "/tablets"
     },
     {
       title: "Laptops",
       count: "18+ Reviews", 
       icon: Laptop,
       gradient: "from-purple-500 to-pink-600",
-      link: "/laptops"
+      link: "/monitors"
     },
     {
       title: "Audio",
       count: "22+ Reviews",
       icon: Headphones,
       gradient: "from-green-500 to-teal-600",
-      link: "/audio"
+      link: "/keyboards"
     },
     {
       title: "Wearables",
       count: "12+ Reviews",
       icon: Watch,
       gradient: "from-orange-500 to-red-600",
-      link: "/wearables"
+      link: "/mice"
     },
     {
       title: "Cameras",
       count: "15+ Reviews",
       icon: Camera,
       gradient: "from-cyan-500 to-blue-600",
-      link: "/cameras"
+      link: "/speakers"
     },
     {
       title: "Gaming",
       count: "20+ Reviews",
       icon: Gamepad2,
       gradient: "from-pink-500 to-rose-600",
-      link: "/gaming"
+      link: "/smart-tvs"
     }
   ];
 

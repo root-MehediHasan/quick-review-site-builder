@@ -8,8 +8,37 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Mail, MessageSquare, Phone, MapPin, Clock, Send } from "lucide-react";
+import { useState } from "react";
+import { toast } from "@/components/ui/sonner";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Show success message
+    toast.success("Message Sent Successfully!", {
+      description: "Thank you for contacting us! We'll get back to you within 24 hours.",
+      duration: 5000,
+    });
+
+    // Reset form
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      subject: "",
+      message: ""
+    });
+  };
+
   const contactMethods = [
     {
       icon: Mail,
@@ -74,26 +103,45 @@ const Contact = () => {
             <div>
               <h2 className="text-3xl font-bold mb-6">Send us a Message</h2>
               <Card className="p-6 bg-card border-border">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="firstName">First Name</Label>
-                      <Input id="firstName" placeholder="Enter your first name" />
+                      <Input 
+                        id="firstName" 
+                        value={formData.firstName}
+                        onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                        placeholder="Enter your first name"
+                        required
+                      />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="lastName">Last Name</Label>
-                      <Input id="lastName" placeholder="Enter your last name" />
+                      <Input 
+                        id="lastName"
+                        value={formData.lastName}
+                        onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                        placeholder="Enter your last name"
+                        required
+                      />
                     </div>
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" placeholder="Enter your email address" />
+                    <Input 
+                      id="email" 
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      placeholder="Enter your email address"
+                      required
+                    />
                   </div>
                   
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject</Label>
-                    <Select>
+                    <Select value={formData.subject} onValueChange={(value) => setFormData({...formData, subject: value})}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a subject" />
                       </SelectTrigger>
@@ -113,12 +161,15 @@ const Contact = () => {
                     <Label htmlFor="message">Message</Label>
                     <Textarea 
                       id="message" 
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
                       placeholder="Tell us how we can help you..."
                       className="min-h-[120px]"
+                      required
                     />
                   </div>
                   
-                  <Button variant="glow" size="lg" className="w-full">
+                  <Button type="submit" variant="glow" size="lg" className="w-full">
                     <Send className="w-4 h-4 mr-2" />
                     Send Message
                   </Button>

@@ -77,6 +77,9 @@ const Footer = () => {
               <Link to="/tech-tips" className="block text-muted-foreground hover:text-primary transition-colors">
                 Tech Tips
               </Link>
+              <Link to="/faq" className="block text-muted-foreground hover:text-primary transition-colors">
+                FAQ
+              </Link>
             </div>
           </div>
 
@@ -92,6 +95,9 @@ const Footer = () => {
               </Link>
               <Link to="/contact" className="block text-muted-foreground hover:text-primary transition-colors">
                 Contact
+              </Link>
+              <Link to="/request-review" className="block text-muted-foreground hover:text-primary transition-colors">
+                Request Review
               </Link>
               <Link to="/privacy-policy" className="block text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
