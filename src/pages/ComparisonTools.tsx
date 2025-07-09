@@ -4,53 +4,135 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Search, Zap, Scale, Trophy } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Search, Zap, Scale, Trophy, Star, ArrowRight, Plus, X } from "lucide-react";
+import { useState } from "react";
+import phoneReview from "@/assets/phone-review.jpg";
 
 const ComparisonTools = () => {
-  const comparisons = [
+  const [selectedProducts, setSelectedProducts] = useState<any[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const products = [
     {
-      title: "iPhone 15 Pro vs Samsung Galaxy S24 Ultra",
-      description: "Flagship smartphone showdown: camera quality, performance, battery life, and value comparison.",
+      id: 1,
+      name: "iPhone 15 Pro Max",
+      brand: "Apple",
       category: "Smartphones",
-      views: "15.2K views",
-      icon: Trophy
+      price: "$1199",
+      rating: 9.2,
+      image: phoneReview,
+      specs: {
+        display: "6.7\" OLED",
+        processor: "A17 Pro",
+        storage: "256GB",
+        camera: "48MP Triple",
+        battery: "4441mAh"
+      }
     },
     {
-      title: "MacBook Pro M3 vs Dell XPS 15",
-      description: "Premium laptop comparison for creative professionals: performance, display quality, and build construction.",
-      category: "Laptops", 
-      views: "8.7K views",
-      icon: Zap
+      id: 2,
+      name: "Samsung Galaxy S24 Ultra",
+      brand: "Samsung",
+      category: "Smartphones", 
+      price: "$1299",
+      rating: 8.8,
+      image: phoneReview,
+      specs: {
+        display: "6.8\" AMOLED",
+        processor: "Snapdragon 8 Gen 3",
+        storage: "256GB",
+        camera: "200MP Quad",
+        battery: "5000mAh"
+      }
     },
     {
-      title: "Sony WH-1000XM5 vs Bose QuietComfort Ultra",
-      description: "Noise-canceling headphone battle: sound quality, ANC performance, comfort, and battery life.",
+      id: 3,
+      name: "MacBook Pro M3 Max",
+      brand: "Apple",
+      category: "Laptops",
+      price: "$3199",
+      rating: 9.1,
+      image: phoneReview,
+      specs: {
+        display: "16\" Liquid Retina XDR",
+        processor: "M3 Max",
+        storage: "512GB SSD",
+        memory: "36GB Unified",
+        battery: "22 hours"
+      }
+    },
+    {
+      id: 4,
+      name: "Dell XPS 15",
+      brand: "Dell",
+      category: "Laptops",
+      price: "$2499",
+      rating: 8.7,
+      image: phoneReview,
+      specs: {
+        display: "15.6\" 4K OLED",
+        processor: "Intel i9-13900H",
+        storage: "1TB SSD",
+        memory: "32GB DDR5",
+        battery: "12 hours"
+      }
+    },
+    {
+      id: 5,
+      name: "Sony WH-1000XM5",
+      brand: "Sony",
       category: "Audio",
-      views: "12.4K views",
-      icon: Scale
+      price: "$399",
+      rating: 8.5,
+      image: phoneReview,
+      specs: {
+        type: "Over-ear",
+        driver: "30mm",
+        battery: "30 hours",
+        anc: "Industry-leading",
+        connectivity: "Bluetooth 5.2"
+      }
     },
     {
-      title: "PS5 vs Xbox Series X Gaming Performance",
-      description: "Console comparison covering exclusive games, performance metrics, storage options, and online services.",
-      category: "Gaming",
-      views: "22.1K views", 
-      icon: Trophy
-    },
-    {
-      title: "Canon R6 Mark II vs Sony A7 IV",
-      description: "Mirrorless camera comparison for photographers: image quality, autofocus speed, and video capabilities.",
-      category: "Cameras",
-      views: "6.8K views",
-      icon: Scale
-    },
-    {
-      title: "Budget vs Premium: $300 vs $1000 Phones",
-      description: "Value analysis comparing flagship features with budget alternatives across different price points.",
-      category: "Value Guide",
-      views: "18.9K views",
-      icon: Zap
+      id: 6,
+      name: "Bose QuietComfort Ultra",
+      brand: "Bose",
+      category: "Audio",
+      price: "$429",
+      rating: 8.6,
+      image: phoneReview,
+      specs: {
+        type: "Over-ear",
+        driver: "35mm",
+        battery: "24 hours",
+        anc: "Advanced",
+        connectivity: "Bluetooth 5.3"
+      }
     }
   ];
+
+  const filteredProducts = products.filter(product => {
+    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         product.brand.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const addToComparison = (product: any) => {
+    if (selectedProducts.length < 3 && !selectedProducts.find(p => p.id === product.id)) {
+      setSelectedProducts([...selectedProducts, product]);
+    }
+  };
+
+  const removeFromComparison = (productId: number) => {
+    setSelectedProducts(selectedProducts.filter(p => p.id !== productId));
+  };
+
+  const clearComparison = () => {
+    setSelectedProducts([]);
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -65,70 +147,196 @@ const ComparisonTools = () => {
               <span className="bg-gradient-primary bg-clip-text text-transparent">Tools</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Side-by-side product comparisons with detailed analysis. Compare specs, performance, pricing, and real-world usage scenarios.
+              Compare products side-by-side with detailed specifications, performance metrics, and expert analysis.
             </p>
-            
-            <div className="max-w-md mx-auto mt-8">
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-                <Input 
-                  placeholder="Search products to compare..."
-                  className="pl-10 bg-background/50 border-border"
-                />
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Panel */}
+      {selectedProducts.length > 0 && (
+        <section className="py-6 bg-primary/5 border-b border-border sticky top-16 z-40">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <h3 className="font-semibold">Comparing ({selectedProducts.length}/3)</h3>
+                <div className="flex gap-2">
+                  {selectedProducts.map(product => (
+                    <Badge key={product.id} variant="secondary" className="flex items-center gap-1">
+                      {product.name}
+                      <X 
+                        className="w-3 h-3 cursor-pointer hover:text-destructive" 
+                        onClick={() => removeFromComparison(product.id)}
+                      />
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" onClick={clearComparison}>
+                  Clear All
+                </Button>
+                <Button variant="glow" size="sm" disabled={selectedProducts.length < 2}>
+                  Compare Now
+                </Button>
               </div>
             </div>
           </div>
+        </section>
+      )}
+
+      {/* Search and Filters */}
+      <section className="py-8 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row gap-4 mb-8">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <Input 
+                placeholder="Search products to compare..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+            <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-full md:w-48">
+                <SelectValue placeholder="All Categories" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">All Categories</SelectItem>
+                <SelectItem value="Smartphones">Smartphones</SelectItem>
+                <SelectItem value="Laptops">Laptops</SelectItem>
+                <SelectItem value="Audio">Audio</SelectItem>
+                <SelectItem value="Gaming">Gaming</SelectItem>
+                <SelectItem value="Cameras">Cameras</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </section>
 
-      <section className="py-20 bg-background">
+      {/* Product Grid */}
+      <section className="py-8 bg-background">
         <div className="container mx-auto px-4">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Popular Comparisons</h2>
-            <p className="text-muted-foreground">Most viewed product comparisons with detailed analysis and expert recommendations</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {comparisons.map((comparison, index) => {
-              const IconComponent = comparison.icon;
-              return (
-                <Card key={index} className="group cursor-pointer transition-all duration-300 hover:shadow-elevated hover:-translate-y-1 bg-card border-border p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <Badge variant="outline" className="text-xs">{comparison.category}</Badge>
-                        <span className="text-xs text-muted-foreground">{comparison.views}</span>
-                      </div>
-                      <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {comparison.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4">
-                        {comparison.description}
-                      </p>
-                      <Button variant="ghost" size="sm" className="group-hover:text-primary">
-                        View Comparison →
-                      </Button>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredProducts.map((product) => (
+              <Card key={product.id} className="group hover:shadow-elevated transition-all duration-300 bg-card border-border overflow-hidden">
+                <div className="aspect-video bg-gradient-primary/20 relative overflow-hidden">
+                  <img 
+                    src={product.image} 
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
+                      {product.category}
+                    </Badge>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <div className="flex items-center gap-1 bg-background/80 backdrop-blur-sm rounded-full px-2 py-1">
+                      <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                      <span className="text-xs font-medium">{product.rating}</span>
                     </div>
                   </div>
-                </Card>
-              );
-            })}
-          </div>
-
-          <div className="text-center mt-16">
-            <div className="bg-gradient-primary/10 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4">Need a Custom Comparison?</h3>
-              <p className="text-muted-foreground mb-6">
-                Can't find the products you want to compare? Request a custom comparison and we'll create a detailed analysis.
-              </p>
-              <Button variant="glow" size="lg">Request Comparison</Button>
-            </div>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="outline" className="text-xs">{product.brand}</Badge>
+                    <span className="font-bold text-primary">{product.price}</span>
+                  </div>
+                  
+                  <h3 className="font-bold text-lg mb-3 group-hover:text-primary transition-colors">
+                    {product.name}
+                  </h3>
+                  
+                  <div className="space-y-2 mb-4">
+                    {Object.entries(product.specs).slice(0, 3).map(([key, value]) => (
+                      <div key={key} className="flex justify-between text-sm">
+                        <span className="text-muted-foreground capitalize">{key}:</span>
+                        <span className="font-medium">{value}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="flex gap-2">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex-1"
+                      onClick={() => addToComparison(product)}
+                      disabled={selectedProducts.length >= 3 || selectedProducts.find(p => p.id === product.id)}
+                    >
+                      <Plus className="w-4 h-4 mr-1" />
+                      {selectedProducts.find(p => p.id === product.id) ? 'Added' : 'Compare'}
+                    </Button>
+                    <Button variant="ghost" size="sm">
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Comparison Table */}
+      {selectedProducts.length >= 2 && (
+        <section className="py-20 bg-secondary/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Side-by-Side Comparison</h2>
+              <p className="text-muted-foreground">Detailed specifications and features comparison</p>
+            </div>
+
+            <Card className="overflow-hidden bg-card border-border">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-secondary/50">
+                    <tr>
+                      <th className="text-left p-4 font-semibold">Specification</th>
+                      {selectedProducts.map(product => (
+                        <th key={product.id} className="text-center p-4 min-w-48">
+                          <div className="space-y-2">
+                            <img src={product.image} alt={product.name} className="w-16 h-16 object-cover rounded-lg mx-auto" />
+                            <div className="font-semibold">{product.name}</div>
+                            <div className="text-sm text-muted-foreground">{product.brand}</div>
+                            <div className="font-bold text-primary">{product.price}</div>
+                          </div>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t border-border">
+                      <td className="p-4 font-medium">Overall Rating</td>
+                      {selectedProducts.map(product => (
+                        <td key={product.id} className="p-4 text-center">
+                          <div className="flex items-center justify-center gap-1">
+                            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                            <span className="font-bold">{product.rating}/10</span>
+                          </div>
+                        </td>
+                      ))}
+                    </tr>
+                    {Object.keys(selectedProducts[0].specs).map(specKey => (
+                      <tr key={specKey} className="border-t border-border">
+                        <td className="p-4 font-medium capitalize">{specKey}</td>
+                        {selectedProducts.map(product => (
+                          <td key={product.id} className="p-4 text-center font-medium">
+                            {product.specs[specKey]}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>

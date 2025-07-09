@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Star, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface ReviewCardProps {
   title: string;
@@ -10,6 +11,7 @@ interface ReviewCardProps {
   readTime: string;
   image: string;
   featured?: boolean;
+  url?: string;
 }
 
 const ReviewCard = ({ 
@@ -19,7 +21,8 @@ const ReviewCard = ({
   category, 
   readTime, 
   image, 
-  featured = false 
+  featured = false,
+  url
 }: ReviewCardProps) => {
   return (
     <Card className={`group cursor-pointer transition-all duration-300 hover:shadow-elevated hover:-translate-y-1 bg-card border-border overflow-hidden ${featured ? 'shadow-glow' : 'shadow-card'}`}>
@@ -74,9 +77,17 @@ const ReviewCard = ({
           </div>
         </div>
 
-        <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-          Read Review
-        </Button>
+        {url ? (
+          <Link to={url}>
+            <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+              Read Review
+            </Button>
+          </Link>
+        ) : (
+          <Button variant="ghost" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+            Read Review
+          </Button>
+        )}
       </div>
     </Card>
   );

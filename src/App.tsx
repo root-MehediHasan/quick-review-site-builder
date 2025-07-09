@@ -30,6 +30,8 @@ import Speakers from "./pages/Speakers";
 import SmartTVs from "./pages/SmartTVs";
 import RequestReview from "./pages/RequestReview";
 import FAQ from "./pages/FAQ";
+import SamsungGalaxyS24Ultra from "./pages/review/SamsungGalaxyS24Ultra";
+import iPhone15ProMax from "./pages/review/iPhone15ProMax";
 
 const queryClient = new QueryClient();
 
@@ -55,6 +57,8 @@ const App = () => (
           <Route path="/smart-tvs" element={<SmartTVs />} />
           <Route path="/request-review" element={<RequestReview />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/review/samsung-galaxy-s24-ultra" element={<SamsungGalaxyS24Ultra />} />
+          <Route path="/review/iphone-15-pro-max" element={<iPhone15ProMax />} />
           <Route path="/categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />
