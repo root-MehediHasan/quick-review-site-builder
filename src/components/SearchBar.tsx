@@ -17,7 +17,7 @@ const SearchBar = () => {
   const searchData = [
     // Reviews
     { title: "iPhone 15 Pro Max Review", category: "Smartphones", url: "/phones", type: "review", rating: 9.2, description: "Apple's flagship smartphone with titanium build and A17 Pro chip" },
-    { title: "Samsung Galaxy S24 Ultra Review", category: "Smartphones", url: "/phones", type: "review", rating: 8.8, description: "Android flagship with S Pen and advanced camera system" },
+    { title: "Samsung Galaxy S24 Ultra Review", category: "Smartphones", url: "/review/samsung-galaxy-s24-ultra", type: "review", rating: 8.8, description: "Android flagship with S Pen and advanced camera system" },
     { title: "Google Pixel 8 Pro Review", category: "Smartphones", url: "/phones", type: "review", rating: 8.5, description: "AI-powered photography and computational excellence" },
     { title: "OnePlus 12 Review", category: "Smartphones", url: "/phones", type: "review", rating: 8.3, description: "Speed meets elegance in OnePlus flagship" },
     
