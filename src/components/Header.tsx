@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Smartphone, Laptop, Headphones, Camera, Gamepad2, ShoppingCart, Newspaper, ChevronDown, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,12 +39,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2" onClick={closeMobileMenu}>
-            <div className="w-8 h-8 bg-gradient-primary rounded-md flex items-center justify-center">
-              <span className="text-sm font-bold text-primary-foreground">TQ</span>
-            </div>
-            <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              TechQuickReview
-            </h1>
+            <img src={logo} alt="TQR Logo" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -24,11 +24,16 @@ const ComparisonTools = () => {
       rating: 9.2,
       image: phoneReview,
       specs: {
-        display: "6.7\" OLED",
-        processor: "A17 Pro",
-        storage: "256GB",
-        camera: "48MP Triple",
-        battery: "4441mAh"
+        display: "6.7\" Super Retina XDR OLED, 2796×1290, 460ppi, ProMotion 120Hz, HDR10, Dolby Vision",
+        processor: "Apple A17 Pro (3nm), 6-core CPU, 6-core GPU, 16-core Neural Engine",
+        storage: "256GB NVMe (128GB/512GB/1TB options)",
+        camera: "48MP Main (f/1.78) + 12MP Ultra Wide (f/2.2) + 12MP Telephoto (f/2.8, 5x zoom)",
+        battery: "4441mAh, MagSafe 15W, Qi 7.5W, USB-C PD 27W, up to 29hrs video",
+        connectivity: "5G, Wi-Fi 6E, Bluetooth 5.3, USB-C 3.0, Lightning port removed",
+        build: "Titanium frame, Ceramic Shield front, IP68 water resistance",
+        os: "iOS 17 (upgradeable to iOS 18+)",
+        dimensions: "159.9 × 76.7 × 8.25mm, 221g",
+        features: "Face ID, Action Button, Dynamic Island, Crash Detection, Emergency SOS"
       }
     },
     {
@@ -40,11 +45,16 @@ const ComparisonTools = () => {
       rating: 8.8,
       image: phoneReview,
       specs: {
-        display: "6.8\" AMOLED",
-        processor: "Snapdragon 8 Gen 3",
-        storage: "256GB",
-        camera: "200MP Quad",
-        battery: "5000mAh"
+        display: "6.8\" Dynamic AMOLED 2X, 3120×1440, 505ppi, 120Hz adaptive, 2600 nits peak",
+        processor: "Snapdragon 8 Gen 3 (4nm), Octa-core CPU, Adreno 750 GPU",
+        storage: "256GB UFS 4.0 (512GB/1TB options, no microSD)",
+        camera: "200MP Main (f/1.7) + 50MP Periscope (f/3.4, 5x) + 10MP Tele (f/2.4, 3x) + 12MP Ultra Wide",
+        battery: "5000mAh, 45W wired, 15W wireless, 4.5W reverse wireless",
+        connectivity: "5G, Wi-Fi 7, Bluetooth 5.3, USB-C 3.2",
+        build: "Titanium frame, Gorilla Glass Armor, IP68, S Pen included",
+        os: "Android 14 with One UI 6.1, 7 years updates",
+        dimensions: "162.3 × 79.0 × 8.6mm, 232g",
+        features: "S Pen, Ultrasonic fingerprint, Galaxy AI, DeX mode, Knox security"
       }
     },
     {
@@ -56,11 +66,16 @@ const ComparisonTools = () => {
       rating: 9.1,
       image: phoneReview,
       specs: {
-        display: "16\" Liquid Retina XDR",
-        processor: "M3 Max",
-        storage: "512GB SSD",
-        memory: "36GB Unified",
-        battery: "22 hours"
+        display: "16\" Liquid Retina XDR, 3456×2234, 254ppi, 1000 nits sustained, 1600 nits peak HDR",
+        processor: "Apple M3 Max (3nm), 16-core CPU (12P+4E), 40-core GPU, 16-core Neural Engine",
+        storage: "512GB SSD (1TB/2TB/4TB/8TB options), up to 7.4GB/s speeds",
+        memory: "36GB Unified Memory (18GB/128GB options), 400GB/s bandwidth",
+        battery: "100Wh, up to 22hrs video, 140W MagSafe 3 charging",
+        connectivity: "Wi-Fi 6E, Bluetooth 5.3, 3x Thunderbolt 4, HDMI 2.1, SDXC, MagSafe 3",
+        build: "Aluminum unibody, Space Black/Silver, 2.16kg",
+        audio: "6-speaker system, Spatial Audio, studio-quality mics",
+        dimensions: "355.7 × 248.1 × 16.8mm",
+        features: "Touch ID, ProMotion 120Hz, P3 wide color, True Tone, backlit Magic Keyboard"
       }
     },
     {
@@ -72,11 +87,16 @@ const ComparisonTools = () => {
       rating: 8.7,
       image: phoneReview,
       specs: {
-        display: "15.6\" 4K OLED",
-        processor: "Intel i9-13900H",
-        storage: "1TB SSD",
-        memory: "32GB DDR5",
-        battery: "12 hours"
+        display: "15.6\" 4K+ OLED, 3456×2160, 282ppi, 400 nits, 100% DCI-P3, HDR400, Dolby Vision",
+        processor: "Intel Core i9-13900H (13th Gen), 14-core (6P+8E), up to 5.4GHz, 24MB cache",
+        storage: "1TB PCIe 4.0 NVMe SSD (2TB/4TB options), up to 7000MB/s read speeds",
+        memory: "32GB LPDDR5-4800 (soldered, no upgrade), dual-channel configuration",
+        battery: "86Wh, up to 12hrs mixed use, 130W USB-C PD charging, ExpressCharge 2.0",
+        connectivity: "Wi-Fi 6E, Bluetooth 5.2, 2x Thunderbolt 4, USB-C 3.2, 3.5mm jack, microSD",
+        build: "CNC aluminum, carbon fiber palm rest, Gorilla Glass 7, 1.96kg",
+        audio: "Quad speakers, Waves Nx 3D audio, dual array mics with noise cancellation",
+        dimensions: "344.7 × 230.1 × 18.0mm",
+        features: "Windows Hello IR camera, fingerprint reader, precision trackpad, backlit keyboard"
       }
     },
     {
@@ -88,11 +108,16 @@ const ComparisonTools = () => {
       rating: 8.5,
       image: phoneReview,
       specs: {
-        type: "Over-ear",
-        driver: "30mm",
-        battery: "30 hours",
-        anc: "Industry-leading",
-        connectivity: "Bluetooth 5.2"
+        type: "Over-ear closed-back wireless headphones with premium materials",
+        driver: "30mm custom carbon fiber composite, neodymium magnets, 4Hz-40kHz frequency response",
+        battery: "30hrs ANC on, 40hrs ANC off, 3min quick charge = 3hrs playback, USB-C charging",
+        anc: "Dual Noise Sensor tech, V1 processor, 8-mic array, adaptive noise cancellation",
+        connectivity: "Bluetooth 5.2, SBC/AAC/LDAC codecs, multipoint pairing, NFC, 3.5mm wired option",
+        controls: "Touch controls, speak-to-chat, wear detection, Sony Headphones Connect app",
+        build: "Lightweight 250g design, soft silicone headband, synthetic leather ear cups",
+        features: "360 Reality Audio, DSEE Extreme upscaling, custom EQ, voice assistant support",
+        dimensions: "271 × 192 × 80mm folded",
+        microphone: "Beamforming mics with precise voice pickup and wind noise reduction"
       }
     },
     {
@@ -104,11 +129,16 @@ const ComparisonTools = () => {
       rating: 8.6,
       image: phoneReview,
       specs: {
-        type: "Over-ear",
-        driver: "35mm",
-        battery: "24 hours",
-        anc: "Advanced",
-        connectivity: "Bluetooth 5.3"
+        type: "Premium over-ear wireless headphones with spatial audio capabilities",
+        driver: "Custom 35mm dynamic drivers, proprietary TriPort tech, balanced sound signature",
+        battery: "24hrs ANC on, 2.5hrs from 15min charge, fast USB-C charging with power indicator",
+        anc: "Advanced QuietComfort tech, CustomTune for personalized ANC, 6-mic array",
+        connectivity: "Bluetooth 5.3, SBC/AAC codecs, multipoint for 2 devices, 2.5mm cable included",
+        controls: "Physical buttons, voice prompts, Bose Music app, Alexa/Google Assistant built-in",
+        build: "Luxe materials, 254g weight, plush protein leather, pivoting earcups",
+        features: "Immersive Audio spatial sound, Aware mode, EQ customization, auto-pause",
+        dimensions: "200 × 155 × 50mm, foldable design with travel case",
+        microphone: "Adaptive 4-mic system with noise rejection for crystal clear calls"
       }
     }
   ];

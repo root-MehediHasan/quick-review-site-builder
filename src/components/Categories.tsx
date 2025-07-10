@@ -10,42 +10,42 @@ const Categories = () => {
       count: "25+ Reviews",
       icon: Smartphone,
       gradient: "from-blue-500 to-purple-600",
-      link: "/tablets"
+      link: "/phones"
     },
     {
       title: "Laptops",
       count: "18+ Reviews", 
       icon: Laptop,
       gradient: "from-purple-500 to-pink-600",
-      link: "/monitors"
+      link: "/laptops"
     },
     {
       title: "Audio",
       count: "22+ Reviews",
       icon: Headphones,
       gradient: "from-green-500 to-teal-600",
-      link: "/keyboards"
+      link: "/audio"
     },
     {
       title: "Wearables",
       count: "12+ Reviews",
       icon: Watch,
       gradient: "from-orange-500 to-red-600",
-      link: "/mice"
+      link: "/wearables"
     },
     {
       title: "Cameras",
       count: "15+ Reviews",
       icon: Camera,
       gradient: "from-cyan-500 to-blue-600",
-      link: "/speakers"
+      link: "/cameras"
     },
     {
       title: "Gaming",
       count: "20+ Reviews",
       icon: Gamepad2,
       gradient: "from-pink-500 to-rose-600",
-      link: "/smart-tvs"
+      link: "/gaming"
     }
   ];
 
@@ -88,7 +88,7 @@ const Categories = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Link to="/categories">
+          <Link to="/all-categories">
             <Button variant="glow" size="lg">
               View All Categories
             </Button>
