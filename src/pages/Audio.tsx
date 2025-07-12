@@ -22,7 +22,8 @@ const Audio = () => {
       rating: 8.8,
       category: "Audio",
       readTime: "8 min read",
-      image: headphonesReview
+      image: headphonesReview,
+      url: "/review/airpods-pro-2"
     },
     {
       title: "Bose QuietComfort Ultra: Premium Comfort",
