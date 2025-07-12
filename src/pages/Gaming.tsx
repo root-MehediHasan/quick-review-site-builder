@@ -14,7 +14,8 @@ const Gaming = () => {
       category: "Gaming",
       readTime: "12 min read",
       image: phoneReview,
-      featured: true
+      featured: true,
+      url: "/review/playstation-5-pro"
     },
     {
       title: "ASUS ROG Ally: Handheld Gaming Revolution",
