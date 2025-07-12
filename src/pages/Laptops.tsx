@@ -44,7 +44,8 @@ const Laptops = () => {
       price: 2499,
       processor: "Intel i9",
       ram: "32GB",
-      type: "Creative"
+      type: "Creative",
+      url: "/review/samsung-galaxy-s24-ultra"
     },
     {
       title: "ThinkPad X1 Carbon: Business Excellence",
