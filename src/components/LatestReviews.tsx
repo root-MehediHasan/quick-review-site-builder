@@ -20,7 +20,8 @@ const LatestReviews = () => {
       rating: 9.1,
       category: "Laptops",
       readTime: "12 min read",
-      image: laptopReview
+      image: laptopReview,
+      url: "/review/macbook-pro-m3-max"
     },
     {
       title: "Sony WH-1000XM5: Still the ANC Champion?",

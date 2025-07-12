@@ -32,6 +32,10 @@ import RequestReview from "./pages/RequestReview";
 import FAQ from "./pages/FAQ";
 import SamsungGalaxyS24Ultra from "./pages/review/SamsungGalaxyS24Ultra";
 import IPhone15ProMax from "./pages/review/iPhone15ProMax";
+import MacBookProM3Max from "./pages/review/MacBookProM3Max";
+import AirPodsProTwo from "./pages/review/AirPodsProTwo";
+import PlayStation5Pro from "./pages/review/PlayStation5Pro";
+import CanonEOSR6MarkII from "./pages/review/CanonEOSR6MarkII";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +63,10 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/review/samsung-galaxy-s24-ultra" element={<SamsungGalaxyS24Ultra />} />
           <Route path="/review/iphone-15-pro-max" element={<IPhone15ProMax />} />
+          <Route path="/review/macbook-pro-m3-max" element={<MacBookProM3Max />} />
+          <Route path="/review/airpods-pro-2" element={<AirPodsProTwo />} />
+          <Route path="/review/playstation-5-pro" element={<PlayStation5Pro />} />
+          <Route path="/review/canon-eos-r6-mark-ii" element={<CanonEOSR6MarkII />} />
           <Route path="/all-categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />
