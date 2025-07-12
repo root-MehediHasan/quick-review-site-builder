@@ -40,6 +40,10 @@ import SmartphoneUnder500 from "./pages/guide/SmartphoneUnder500";
 import GamingLaptopGuide from "./pages/guide/GamingLaptopGuide";
 import AppleM4Chip from "./pages/news/AppleM4Chip";
 import SamsungGalaxyS25 from "./pages/news/SamsungGalaxyS25";
+import AppleWatchSeries9 from "./pages/news/AppleWatchSeries9";
+import SamsungGalaxyWatch6 from "./pages/news/SamsungGalaxyWatch6";
+import IPadProM2 from "./pages/review/iPadProM2";
+import SamsungGalaxyTabS9Ultra from "./pages/review/SamsungGalaxyTabS9Ultra";
 
 const queryClient = new QueryClient();
 
@@ -75,6 +79,10 @@ const App = () => (
           <Route path="/guide/gaming-laptop-guide" element={<GamingLaptopGuide />} />
           <Route path="/news/apple-m4-chip" element={<AppleM4Chip />} />
           <Route path="/news/samsung-galaxy-s25" element={<SamsungGalaxyS25 />} />
+          <Route path="/news/apple-watch-series-9" element={<AppleWatchSeries9 />} />
+          <Route path="/news/samsung-galaxy-watch-6" element={<SamsungGalaxyWatch6 />} />
+          <Route path="/review/ipad-pro-m2" element={<IPadProM2 />} />
+          <Route path="/review/samsung-galaxy-tab-s9-ultra" element={<SamsungGalaxyTabS9Ultra />} />
           <Route path="/all-categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />
