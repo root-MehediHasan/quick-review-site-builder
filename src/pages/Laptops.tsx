@@ -31,7 +31,8 @@ const Laptops = () => {
       price: 3199,
       processor: "M3 Max",
       ram: "36GB",
-      type: "Creative"
+      type: "Creative",
+      url: "/review/macbook-pro-m3-max"
     },
     {
       title: "Dell XPS 15: Premium Windows Alternative",
@@ -44,8 +45,7 @@ const Laptops = () => {
       price: 2499,
       processor: "Intel i9",
       ram: "32GB",
-      type: "Creative",
-      url: "/review/samsung-galaxy-s24-ultra"
+      type: "Creative"
     },
     {
       title: "ThinkPad X1 Carbon: Business Excellence",
