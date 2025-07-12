@@ -32,6 +32,7 @@ const Laptops = () => {
       processor: "M3 Max",
       ram: "36GB",
       type: "Creative"
+      url: "/review/samsung-galaxy-s24-ultra"
     },
     {
       title: "Dell XPS 15: Premium Windows Alternative",
