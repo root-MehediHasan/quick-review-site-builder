@@ -115,7 +115,7 @@ const AllCategories = () => {
       icon: Tv,
       gradient: "from-purple-500 to-indigo-600",
       description: "4K, 8K, OLED, and QLED televisions",
-      url: "/tvs"
+      url: "/smart-tvs"
     }
   ];
 
