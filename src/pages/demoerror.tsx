@@ -289,7 +289,7 @@ const Error404Page: React.FC = () => {
         </FloatingElement>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .bg-grid-pattern {
           background-image: radial-gradient(circle, rgba(var(--foreground), 0.1) 1px, transparent 1px);
           background-size: 20px 20px;
