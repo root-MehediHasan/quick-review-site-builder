@@ -14,7 +14,8 @@ const Cameras = () => {
       category: "Cameras",
       readTime: "14 min read",
       image: laptopReview,
-      featured: true
+      featured: true,
+      url: "/review/canon-eos-r6-mark-ii"
     },
     {
       title: "Sony A7 IV: All-Around Excellence",
