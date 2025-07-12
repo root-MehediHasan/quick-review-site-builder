@@ -25,35 +25,40 @@ const AllCategories = () => {
       count: "25+ Reviews",
       icon: Smartphone,
       gradient: "from-blue-500 to-purple-600",
-      description: "Latest phones and mobile devices"
+      description: "Latest phones and mobile devices",
+      url: "/phones"
     },
     {
       title: "Laptops",
       count: "18+ Reviews", 
       icon: Laptop,
       gradient: "from-purple-500 to-pink-600",
-      description: "Gaming, business, and creative laptops"
+      description: "Gaming, business, and creative laptops",
+      url: "/laptops"
     },
     {
       title: "Audio",
       count: "22+ Reviews",
       icon: Headphones,
       gradient: "from-green-500 to-teal-600",
-      description: "Headphones, earbuds, and speakers"
+      description: "Headphones, earbuds, and speakers",
+      url: "/audio"
     },
     {
       title: "Wearables",
       count: "12+ Reviews",
       icon: Watch,
       gradient: "from-orange-500 to-red-600",
-      description: "Smartwatches and fitness trackers"
+      description: "Smartwatches and fitness trackers",
+      url: "/wearables"
     },
     {
       title: "Cameras",
       count: "15+ Reviews",
       icon: Camera,
       gradient: "from-cyan-500 to-blue-600",
-      description: "DSLRs, mirrorless, and action cameras"
+      description: "DSLRs, mirrorless, and action cameras",
+      url: "/cameras"
     },
     {
       title: "Gaming",
