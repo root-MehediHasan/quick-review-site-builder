@@ -55,7 +55,8 @@ const Phones = () => {
       brand: "Google",
       price: 999,
       storage: "128GB",
-      os: "Android"
+      os: "Android",
+      url: "/review/iphone-15-pro-max"
     },
     {
       title: "OnePlus 12: Speed Meets Elegance",
@@ -67,7 +68,8 @@ const Phones = () => {
       brand: "OnePlus",
       price: 799,
       storage: "256GB",
-      os: "Android"
+      os: "Android",
+      url: "/review/iphone-15-pro-max"
     },
     {
       title: "Xiaomi 14: Flagship Power at Mid-Range Price",
@@ -79,7 +81,8 @@ const Phones = () => {
       brand: "Xiaomi",
       price: 699,
       storage: "256GB",
-      os: "Android"
+      os: "Android",
+      url: "/review/iphone-15-pro-max"
     },
     {
       title: "Nothing Phone (2): Transparent Innovation",
@@ -91,7 +94,8 @@ const Phones = () => {
       brand: "Nothing",
       price: 599,
       storage: "128GB",
-      os: "Android"
+      os: "Android",
+      url: "/review/iphone-15-pro-max"
     }
   ];
 
