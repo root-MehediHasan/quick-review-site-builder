@@ -339,7 +339,7 @@ const IPadProM2 = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm">Color Accuracy</span>
-                    <span className="text-sm font-semibold">ΔE < 1</span>
+                    <span className="text-sm font-semibold">Delta E &lt; 1</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-sm">Response Time</span>
