@@ -37,11 +37,11 @@ const SearchBar = () => {
     { title: "Canon EOS R6 Mark II Review", category: "Cameras", url: "/cameras", type: "review", rating: 9.1, description: "Mirrorless camera with advanced autofocus" },
     { title: "Sony A7 IV Review", category: "Cameras", url: "/cameras", type: "review", rating: 9.0, description: "All-around excellence for professionals" },
     
-    { title: "Apple Watch Series 9 Review", category: "Wearables", url: "/wearables", type: "review", rating: 9.0, description: "Health tracking excellence from Apple" },
-    { title: "Samsung Galaxy Watch 6 Review", category: "Wearables", url: "/wearables", type: "review", rating: 8.7, description: "Android's best smartwatch companion" },
+    { title: "Apple Watch Series 9 Review", category: "Wearables", url: "/news/apple-watch-series-9", type: "review", rating: 9.0, description: "Health tracking excellence from Apple" },
+    { title: "Samsung Galaxy Watch 6 Review", category: "Wearables", url: "/news/samsung-galaxy-watch-6", type: "review", rating: 8.7, description: "Android's best smartwatch companion" },
     
-    { title: "iPad Pro M2 Review", category: "Tablets", url: "/tablets", type: "review", rating: 9.1, description: "Creative powerhouse tablet redefined" },
-    { title: "Samsung Galaxy Tab S9 Ultra Review", category: "Tablets", url: "/tablets", type: "review", rating: 8.8, description: "Android tablet excellence with OLED display" },
+    { title: "iPad Pro M2 Review", category: "Tablets", url: "/review/ipad-pro-m2", type: "review", rating: 9.1, description: "Creative powerhouse tablet redefined" },
+    { title: "Samsung Galaxy Tab S9 Ultra Review", category: "Tablets", url: "/review/samsung-galaxy-tab-s9-ultra", type: "review", rating: 8.8, description: "Android tablet excellence with OLED display" },
     
     { title: "LG UltraGear 27GP950 Review", category: "Monitors", url: "/monitors", type: "review", rating: 9.0, description: "4K gaming monitor with 144Hz refresh rate" },
     { title: "Dell UltraSharp U2723QE Review", category: "Monitors", url: "/monitors", type: "review", rating: 8.9, description: "Professional 4K monitor for creatives" },
@@ -59,8 +59,8 @@ const SearchBar = () => {
     { title: "Samsung QN90C Neo QLED Review", category: "Smart TVs", url: "/smart-tvs", type: "review", rating: 8.9, description: "Bright room excellence with Mini LED" },
     
     // Buying Guides
-    { title: "Best Smartphones Under $500 (2024)", category: "Buying Guides", url: "/buying-guides", type: "guide", description: "Complete guide to budget smartphones with flagship features" },
-    { title: "Gaming Laptop Buying Guide", category: "Buying Guides", url: "/buying-guides", type: "guide", description: "Everything about choosing gaming laptops" },
+    { title: "Best Smartphones Under $500 (2024)", category: "Buying Guides", url: "/guide/smartphone-under-500", type: "guide", description: "Complete guide to budget smartphones with flagship features" },
+    { title: "Gaming Laptop Buying Guide", category: "Buying Guides", url: "/guide/gaming-laptop-guide", type: "guide", description: "Everything about choosing gaming laptops" },
     { title: "Wireless Headphones: What to Look For", category: "Buying Guides", url: "/buying-guides", type: "guide", description: "Comprehensive headphones buying guide" },
     { title: "4K Monitor Buying Guide for 2024", category: "Buying Guides", url: "/buying-guides", type: "guide", description: "Display technology and refresh rates comparison" },
     
@@ -70,8 +70,8 @@ const SearchBar = () => {
     { title: "Sony WH-1000XM5 vs Bose QuietComfort Ultra", category: "Comparisons", url: "/comparison-tools", type: "comparison", description: "Noise-canceling headphone battle" },
     
     // Tech News
-    { title: "Apple Announces M4 Chip with AI Capabilities", category: "Tech News", url: "/tech-news", type: "news", description: "Revolutionary processor with 40% better performance" },
-    { title: "Samsung Galaxy S25 Series: Everything We Know", category: "Tech News", url: "/tech-news", type: "news", description: "Leaked specifications and camera improvements" },
+    { title: "Apple Announces M4 Chip with AI Capabilities", category: "Tech News", url: "/news/apple-m4-chip", type: "news", description: "Revolutionary processor with 40% better performance" },
+    { title: "Samsung Galaxy S25 Series: Everything We Know", category: "Tech News", url: "/news/samsung-galaxy-s25", type: "news", description: "Leaked specifications and camera improvements" },
     { title: "CES 2024: Most Innovative Tech Announcements", category: "Tech News", url: "/tech-news", type: "news", description: "Standout innovations from Consumer Electronics Show" },
     
     // Video Reviews

@@ -14,6 +14,7 @@ const Wearables = () => {
       category: "Wearables",
       readTime: "10 min read",
       image: phoneReview,
+      url: "/news/apple-watch-series-9",
       featured: true
     },
     {
@@ -22,7 +23,8 @@ const Wearables = () => {
       rating: 8.7,
       category: "Wearables",
       readTime: "8 min read",
-      image: phoneReview
+      image: phoneReview,
+      url: "/news/samsung-galaxy-watch-6"
     },
     {
       title: "Fitbit Charge 6: Fitness Tracking Champion",

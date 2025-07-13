@@ -14,6 +14,7 @@ const Tablets = () => {
       category: "Tablets",
       readTime: "12 min read",
       image: laptopReview,
+      url: "/review/ipad-pro-m2",
       featured: true
     },
     {
@@ -22,7 +23,8 @@ const Tablets = () => {
       rating: 8.8,
       category: "Tablets",
       readTime: "10 min read",
-      image: laptopReview
+      image: laptopReview,
+      url: "/review/samsung-galaxy-tab-s9-ultra"
     },
     {
       title: "Microsoft Surface Pro 9: 2-in-1 Versatility",
