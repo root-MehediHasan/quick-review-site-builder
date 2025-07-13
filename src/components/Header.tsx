@@ -80,13 +80,13 @@ const Header = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuLabel>Popular Reviews</DropdownMenuLabel>
                 <DropdownMenuItem asChild>
-                  <Link to="/phones/iphone-15-pro-max" className="w-full">iPhone 15 Pro Max</Link>
+                  <Link to="/review/iphone-15-pro-max" className="w-full">iPhone 15 Pro Max</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/phones/samsung-galaxy-s24-ultra" className="w-full">Galaxy S24 Ultra</Link>
+                  <Link to="/review/samsung-galaxy-s24-ultra" className="w-full">Galaxy S24 Ultra</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/phones/google-pixel-8-pro" className="w-full">Google Pixel 8 Pro</Link>
+                  <Link to="/phones" className="w-full">Google Pixel 8 Pro</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -122,13 +122,13 @@ const Header = () => {
                 <DropdownMenuSeparator />
                 <DropdownMenuLabel>Popular Reviews</DropdownMenuLabel>
                 <DropdownMenuItem asChild>
-                  <Link to="/laptops/macbook-pro-m3-max" className="w-full">MacBook Pro M3 Max</Link>
+                  <Link to="/review/macbook-pro-m3-max" className="w-full">MacBook Pro M3 Max</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/laptops/dell-xps-15" className="w-full">Dell XPS 15</Link>
+                  <Link to="/laptops" className="w-full">Dell XPS 15</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link to="/laptops/thinkpad-x1-carbon" className="w-full">ThinkPad X1 Carbon</Link>
+                  <Link to="/laptops" className="w-full">ThinkPad X1 Carbon</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
