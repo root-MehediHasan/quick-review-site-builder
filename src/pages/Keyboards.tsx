@@ -14,7 +14,8 @@ const Keyboards = () => {
       category: "Keyboards",
       readTime: "9 min read",
       image: phoneReview,
-      featured: true
+      featured: true,
+      url: "/review/keychron-k8-pro"
     },
     {
       title: "Logitech MX Keys: Productivity Champion",
@@ -22,7 +23,8 @@ const Keyboards = () => {
       rating: 8.6,
       category: "Keyboards",
       readTime: "7 min read",
-      image: phoneReview
+      image: phoneReview,
+      url: "/review/logitech-mx-keys"
     },
     {
       title: "Razer Huntsman V3 Pro: Gaming Performance King",

@@ -44,6 +44,10 @@ import AppleWatchSeries9 from "./pages/news/AppleWatchSeries9";
 import SamsungGalaxyWatch6 from "./pages/news/SamsungGalaxyWatch6";
 import IPadProM2 from "./pages/review/iPadProM2";
 import SamsungGalaxyTabS9Ultra from "./pages/review/SamsungGalaxyTabS9Ultra";
+import LGUltraGear27GP950 from "./pages/review/LGUltraGear27GP950";
+import DellUltraSharpU2723QE from "./pages/review/DellUltraSharpU2723QE";
+import KeychronK8Pro from "./pages/review/KeychronK8Pro";
+import LogitechMXKeys from "./pages/review/LogitechMXKeys";
 
 const queryClient = new QueryClient();
 
@@ -83,6 +87,10 @@ const App = () => (
           <Route path="/news/samsung-galaxy-watch-6" element={<SamsungGalaxyWatch6 />} />
           <Route path="/review/ipad-pro-m2" element={<IPadProM2 />} />
           <Route path="/review/samsung-galaxy-tab-s9-ultra" element={<SamsungGalaxyTabS9Ultra />} />
+          <Route path="/review/lg-ultragear-27gp950" element={<LGUltraGear27GP950 />} />
+          <Route path="/review/dell-ultrasharp-u2723qe" element={<DellUltraSharpU2723QE />} />
+          <Route path="/review/keychron-k8-pro" element={<KeychronK8Pro />} />
+          <Route path="/review/logitech-mx-keys" element={<LogitechMXKeys />} />
           <Route path="/all-categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />

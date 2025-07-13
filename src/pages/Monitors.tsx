@@ -14,7 +14,8 @@ const Monitors = () => {
       category: "Monitors",
       readTime: "11 min read",
       image: laptopReview,
-      featured: true
+      featured: true,
+      url: "/review/lg-ultragear-27gp950"
     },
     {
       title: "Dell UltraSharp U2723QE: Professional Precision",
@@ -22,7 +23,8 @@ const Monitors = () => {
       rating: 8.9,
       category: "Monitors",
       readTime: "9 min read",
-      image: laptopReview
+      image: laptopReview,
+      url: "/review/dell-ultrasharp-u2723qe"
     },
     {
       title: "Samsung Odyssey G9: Ultrawide Gaming Beast",
