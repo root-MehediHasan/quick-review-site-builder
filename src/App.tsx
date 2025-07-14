@@ -48,6 +48,10 @@ import LGUltraGear27GP950 from "./pages/review/LGUltraGear27GP950";
 import DellUltraSharpU2723QE from "./pages/review/DellUltraSharpU2723QE";
 import KeychronK8Pro from "./pages/review/KeychronK8Pro";
 import LogitechMXKeys from "./pages/review/LogitechMXKeys";
+import LogitechGProXSuperlight2 from "./pages/review/LogitechGProXSuperlight2";
+import RazerDeathAdderV3 from "./pages/review/RazerDeathAdderV3";
+import SonosEra300 from "./pages/review/SonosEra300";
+import KEFLs50Meta from "./pages/review/KEFLs50Meta";
 
 const queryClient = new QueryClient();
 
@@ -91,6 +95,10 @@ const App = () => (
           <Route path="/review/dell-ultrasharp-u2723qe" element={<DellUltraSharpU2723QE />} />
           <Route path="/review/keychron-k8-pro" element={<KeychronK8Pro />} />
           <Route path="/review/logitech-mx-keys" element={<LogitechMXKeys />} />
+          <Route path="/review/logitech-g-pro-x-superlight-2" element={<LogitechGProXSuperlight2 />} />
+          <Route path="/review/razer-deathadder-v3" element={<RazerDeathAdderV3 />} />
+          <Route path="/review/sonos-era-300" element={<SonosEra300 />} />
+          <Route path="/review/kef-ls50-meta" element={<KEFLs50Meta />} />
           <Route path="/all-categories" element={<AllCategories />} />
           <Route path="/buying-guides" element={<BuyingGuides />} />
           <Route path="/comparison-tools" element={<ComparisonTools />} />

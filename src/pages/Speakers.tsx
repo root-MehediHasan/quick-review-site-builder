@@ -4,25 +4,28 @@ import ReviewCard from "@/components/ReviewCard";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import headphonesReview from "@/assets/headphones-review.jpg";
+import { Link } from "react-router-dom";
 
 const Speakers = () => {
   const speakerReviews = [
     {
       title: "Sonos Era 300: Spatial Audio Revolution",
       excerpt: "Premium smart speaker with Dolby Atmos support, room-filling sound, and seamless multi-room integration.",
-      rating: 9.0,
+      rating: 9.4,
       category: "Speakers",
       readTime: "10 min read",
       image: headphonesReview,
-      featured: true
+      featured: true,
+      link: "/review/sonos-era-300"
     },
     {
       title: "KEF LS50 Meta: Audiophile Excellence",
       excerpt: "High-end bookshelf speakers with Metamaterial Absorption Technology delivering studio-quality sound reproduction.",
-      rating: 9.2,
+      rating: 9.6,
       category: "Speakers",
       readTime: "12 min read",
-      image: headphonesReview
+      image: headphonesReview,
+      link: "/review/kef-ls50-meta"
     },
     {
       title: "JBL Charge 5: Portable Powerhouse",
@@ -91,7 +94,9 @@ const Speakers = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {speakerReviews.map((review, index) => (
-              <ReviewCard key={index} {...review} />
+              <Link key={index} to={review.link || "#"}>
+                <ReviewCard {...review} />
+              </Link>
             ))}
           </div>
 

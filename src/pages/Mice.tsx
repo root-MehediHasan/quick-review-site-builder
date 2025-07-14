@@ -5,24 +5,28 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import phoneReview from "@/assets/phone-review.jpg";
 
+import { Link } from "react-router-dom";
+
 const Mice = () => {
   const mouseReviews = [
     {
       title: "Logitech G Pro X Superlight 2: Esports Excellence",
       excerpt: "Ultra-lightweight wireless gaming mouse with HERO 25K sensor, 95-hour battery life, and tournament-grade performance.",
-      rating: 9.1,
+      rating: 9.5,
       category: "Mice",
       readTime: "8 min read",
       image: phoneReview,
-      featured: true
+      featured: true,
+      link: "/review/logitech-g-pro-x-superlight-2"
     },
     {
       title: "Razer DeathAdder V3: Ergonomic Gaming Champion",
       excerpt: "Refined ergonomic design with Focus Pro 30K sensor, lightweight construction, and exceptional comfort for long sessions.",
-      rating: 8.8,
+      rating: 9.2,
       category: "Mice",
       readTime: "7 min read",
-      image: phoneReview
+      image: phoneReview,
+      link: "/review/razer-deathadder-v3"
     },
     {
       title: "Apple Magic Mouse: Mac Integration Perfected",
@@ -91,7 +95,9 @@ const Mice = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mouseReviews.map((review, index) => (
-              <ReviewCard key={index} {...review} />
+              <Link key={index} to={review.link || "#"}>
+                <ReviewCard {...review} />
+              </Link>
             ))}
           </div>
 
